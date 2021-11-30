@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="..\Creed_Backend\static\home\css\home.css">
+<!--    <link rel="stylesheet" href="home.css"/>-->
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
     <script src="https://use.fontawesome.com/5481534604.js"></script>
     <title>Creed-Community</title>
 </head>
@@ -15,7 +17,7 @@
 <div class="main">
     <nav>
         <!-- Logo -->
-        <a href="creed.html"><img src="creedimg/logo.png" class="logo" alt="creed-slayers"></a>
+        <a href="creed.html"><img src="{% static '/images/logo.png' %}" class="logo" alt="creed-slayers"></a>
         <ul>
             <!-- nav-links -->
             <li><a href="index.html">Home</a></li>
