@@ -12,40 +12,46 @@
     <title>Creed-Community</title>
 </head>
 <body>
-<section class="header">
+<section class="header1">
     <nav>
-        <a href="creed.html"><img src="{% static '/images/logo.png' %}" class="logo" alt="creed-slayers"></a>
+        <a href="index.html"><img src="{% static '/images/logo.png' %}" alt=""></a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()" id="cross"></i>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="{% url 'joinus' %}">Join</a></li>
-                <li><a href="{% url 'about_us' %}">About</a></li>
+                <li><a href="{% url 'joinus' %}">Join Us</a></li>
+               <li><a href="{% url 'about_us' %}">About</a></li>
             </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()" id="menu"></i>
     </nav>
-    <div class="text-box">
-        <!-- 1st text -->
-        <p>WE ARE,</p>
-        <!-- 2nd -->
-        <h1>CREED <br> Community</h1>
-        <!-- 3rd -->
-        <h3>A community meant to entertain</h3>
-        <br>
-        <span>You can explore / join us </span>
-        <br>
-        <!-- buttons -->
-        <a href="{% url 'joinus' %}">
-            <button class="btn">Join Us &#9755;</button>
-        </a>
-        <a href="explore.html">
-            <button> Explore Now &#9755;</button>
-        </a>
+    <div class="join-us">
+        <h2>Wanna be a part of our family</h2>
+        <p id="first">Choose any group according to your preferences from the list below</p>
+    </div>
+    <div class="links">
+        <table>
+            <hr>
+            <tr>
+                <th>Group Name</th>
+                <th>Category</th>
+                <th>Join Now</th>
+                <th>Total Members</th>
+            </tr>
+            {% for group in groups %}
+            <tr>
+                <td>{{group.group_name}}</td>
+                <td class="w">{{group.category}}</td>
+                <td><a href={{group.link}} target="_blank">
+                    <button class="button">Join</button>
+                </a></td>
+                <td>{{group.total_members}}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </section>
-
 <script>
     var navLinks = document.getElementById("navLinks");
     function showMenu(){
@@ -56,7 +62,8 @@
     }
 
 
-</script>
 
+
+</script>
 </body>
 </html>
