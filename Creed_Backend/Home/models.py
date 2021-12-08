@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Category(models.Model):
     name = models.CharField(max_length=200, blank=False, null=True)
     created_at = models.DateTimeField(auto_now=True)
